@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  webapp:
+    build: ..
+    networks:
+      - mongod-net
+    ports:
+      - '5000:5000'
+  
+  mongo:
+    image: mongo
+    networks:
+      - mongod-net
+    ports:
+      - '27017:27017'
+
+
+networks:
+  mongod-net:
+    driver: bridge
