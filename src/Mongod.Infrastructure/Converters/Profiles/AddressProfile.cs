@@ -9,7 +9,8 @@ namespace Mongod.Infrastructure.Converters.Profiles
         public AddressProfile()
         {
             CreateMap<Address,AddressModel>();
-            CreateMap<AddressModel, Address>();
+            CreateMap<AddressModel, Address>()
+                .ForMember(x=>x.Id, y=>y.Ignore());
         }
     }
 }

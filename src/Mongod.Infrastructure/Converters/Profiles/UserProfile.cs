@@ -9,7 +9,8 @@ namespace Mongod.Infrastructure.Converters.Profiles
         public UserProfile()
         {
             CreateMap<User,UserModel>();
-            CreateMap<UserModel,User>();
+            CreateMap<UserModel,User>()
+                .ForMember(x=>x.Id, y=>y.Ignore());
         }
     }
 }
