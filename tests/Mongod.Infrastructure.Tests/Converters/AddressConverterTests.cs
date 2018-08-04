@@ -14,7 +14,7 @@ namespace Mongod.Infrastructure.Tests.Converters
         [SetUp]
         public void SetUp ()
         {
-            _sut = new AddressConverter();
+            _sut = new AddressConverter(AutoMapperConfigurationTests._mapper);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Mongod.Infrastructure.Tests.Converters
         [SetUp]
         public void SetUp ()
         {
-            _sut = new FlatConverter();
+            _sut = new FlatConverter(AutoMapperConfigurationTests._mapper);
         }   
     }
 }

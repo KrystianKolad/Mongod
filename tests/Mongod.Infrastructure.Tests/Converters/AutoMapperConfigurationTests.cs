@@ -7,6 +7,7 @@ namespace Mongod.Infrastructure.Tests.Converters
     [SetUpFixture]
     public class AutoMapperConfigurationTests
     {
+        public static IMapper _mapper;
         [OneTimeSetUp]
         public void SetUp ()
         {
@@ -19,6 +20,7 @@ namespace Mongod.Infrastructure.Tests.Converters
             });
 
             Mapper.AssertConfigurationIsValid ();
+            _mapper = new Mapper(Mapper.Configuration);
         }
     }
 }

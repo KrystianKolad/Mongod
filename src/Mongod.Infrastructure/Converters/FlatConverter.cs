@@ -8,24 +8,29 @@ namespace Mongod.Infrastructure.Converters
 {
     public class FlatConverter : IConverter<Flat, FlatModel>
     {
+        private IMapper _mapper;
+        public FlatConverter(IMapper mapper)
+        {
+            _mapper = mapper;
+        }
         public Flat Convert(FlatModel model)
         {
-            return Mapper.Map<FlatModel,Flat>(model);
+            return _mapper.Map<FlatModel,Flat>(model);
         }
 
         public FlatModel Convert(Flat entity)
         {
-            return Mapper.Map<Flat,FlatModel>(entity);
+            return _mapper.Map<Flat,FlatModel>(entity);
         }
 
         public IList<FlatModel> Convert(List<Flat> entity)
         {
-            return Mapper.Map<List<Flat>,List<FlatModel>>(entity);
+            return _mapper.Map<List<Flat>,List<FlatModel>>(entity);
         }
 
         public IList<Flat> Convert(List<FlatModel> entity)
         {
-            return Mapper.Map<List<FlatModel>,List<Flat>>(entity);
+            return _mapper.Map<List<FlatModel>,List<Flat>>(entity);
         }
     }
 }
