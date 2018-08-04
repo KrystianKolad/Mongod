@@ -1,6 +1,6 @@
 namespace Mongod.Infrastructure.Models
 {
-    public class FlatModel : BaseModel
+    public abstract class BaseModel
     {
         
     }

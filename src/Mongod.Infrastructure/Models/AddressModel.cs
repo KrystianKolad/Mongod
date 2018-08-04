@@ -1,6 +1,6 @@
 namespace Mongod.Infrastructure.Models
 {
-    public class AddressModel
+    public class AddressModel : BaseModel
     {
         
     }

@@ -1,6 +1,6 @@
 namespace Mongod.Infrastructure.Models
 {
-    public class UserModel
+    public class UserModel : BaseModel
     {
         
     }
