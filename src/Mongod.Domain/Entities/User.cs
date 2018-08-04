@@ -1,8 +1,10 @@
 using System;
+using Mongod.Domain.Attributes;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Mongod.Domain.Entities
 {
+    [BsonCollection("Users")]
     public class User : BaseEntity
     {
         [BsonElement("name")]

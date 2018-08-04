@@ -1,7 +1,9 @@
+using Mongod.Domain.Attributes;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Mongod.Domain.Entities
 {
+    [BsonCollection("Flats")]
     public class Flat : BaseEntity
     {
         [BsonElement("owner")]
