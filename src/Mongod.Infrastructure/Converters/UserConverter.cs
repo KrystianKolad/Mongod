@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AutoMapper;
 using Mongod.Domain.Entities;
 using Mongod.Infrastructure.Converters.Interfaces;
 using Mongod.Infrastructure.Models;
@@ -9,22 +10,23 @@ namespace Mongod.Infrastructure.Converters
     {
         public User Convert(UserModel model)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<UserModel,User>(model);
         }
 
         public UserModel Convert(User entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<User,UserModel>(entity);
         }
 
-        public IList<UserModel> Convert(IList<User> entity)
+        public IList<UserModel> Convert(List<User> entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<List<User>,List<UserModel>>(entity);
         }
 
-        public IList<User> Convert(IList<UserModel> entity)
+        public IList<User> Convert(List<UserModel> entity)
         {
-            throw new System.NotImplementedException();
+            
+            return Mapper.Map<List<UserModel>,List<User>>(entity);
         }
     }
 }

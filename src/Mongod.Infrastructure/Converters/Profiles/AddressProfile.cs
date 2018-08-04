@@ -1,7 +1,15 @@
+using AutoMapper;
+using Mongod.Domain.Entities;
+using Mongod.Infrastructure.Models;
+
 namespace Mongod.Infrastructure.Converters.Profiles
 {
-    public class AddressProfile
+    public class AddressProfile : Profile
     {
-        
+        public AddressProfile()
+        {
+            CreateMap<Address,AddressModel>();
+            CreateMap<AddressModel, Address>();
+        }
     }
 }

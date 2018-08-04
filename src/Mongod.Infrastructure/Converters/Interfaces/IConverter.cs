@@ -10,7 +10,7 @@ namespace Mongod.Infrastructure.Converters.Interfaces
     {
         TEntity Convert(TModel model);
         TModel Convert(TEntity entity);
-        IList<TModel> Convert(IList<TEntity> entity);
-        IList<TEntity> Convert(IList<TModel> entity);
+        IList<TModel> Convert(List<TEntity> entity);
+        IList<TEntity> Convert(List<TModel> entity);
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AutoMapper;
 using Mongod.Domain.Entities;
 using Mongod.Infrastructure.Converters.Interfaces;
 using Mongod.Infrastructure.Models;
@@ -9,22 +10,22 @@ namespace Mongod.Infrastructure.Converters
     {
         public Flat Convert(FlatModel model)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<FlatModel,Flat>(model);
         }
 
         public FlatModel Convert(Flat entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<Flat,FlatModel>(entity);
         }
 
-        public IList<FlatModel> Convert(IList<Flat> entity)
+        public IList<FlatModel> Convert(List<Flat> entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<List<Flat>,List<FlatModel>>(entity);
         }
 
-        public IList<Flat> Convert(IList<FlatModel> entity)
+        public IList<Flat> Convert(List<FlatModel> entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<List<FlatModel>,List<Flat>>(entity);
         }
     }
 }

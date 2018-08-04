@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AutoMapper;
 using Mongod.Domain.Entities;
 using Mongod.Infrastructure.Converters.Interfaces;
 using Mongod.Infrastructure.Models;
@@ -9,22 +10,22 @@ namespace Mongod.Infrastructure.Converters
     {
         public Address Convert(AddressModel model)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<AddressModel,Address>(model);
         }
 
         public AddressModel Convert(Address entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<Address,AddressModel>(entity);
         }
 
-        public IList<AddressModel> Convert(IList<Address> entity)
+        public IList<AddressModel> Convert(List<Address> entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<List<Address>,List<AddressModel>>(entity);
         }
 
-        public IList<Address> Convert(IList<AddressModel> entity)
+        public IList<Address> Convert(List<AddressModel> entity)
         {
-            throw new System.NotImplementedException();
+            return Mapper.Map<List<AddressModel>,List<Address>>(entity);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Mongod.Domain.Repositories
             return await collection.Find(x=>x.Id.Equals(id)).SingleOrDefaultAsync();
         }
 
-        public async Task<IList<T>> GetAllAsync()
+        public async Task<List<T>> GetAllAsync()
         {
             var collection = _database.GetCollection<T>(GetCollectionName());
             return await collection.AsQueryable().ToListAsync();

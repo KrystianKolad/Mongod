@@ -9,6 +9,6 @@ namespace Mongod.Domain.Repositories.Interfaces
     {
         Task AddAsync(T entity);
         Task<T> FindAsync(Guid id);
-        Task<IList<T>> GetAllAsync();
+        Task<List<T>> GetAllAsync();
     }
 }
