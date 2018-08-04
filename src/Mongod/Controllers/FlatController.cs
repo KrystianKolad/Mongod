@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Mongod.Domain.Entities;
@@ -26,6 +27,12 @@ namespace Mongod.Controllers
         {
             await _service.AddAsync(model);
             return RedirectToAction("Index","Home");
+        }
+
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var model = await _service.FindAsync(id);
+            return View(model);
         }
     }
 }
