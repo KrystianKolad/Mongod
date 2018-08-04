@@ -12,4 +12,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mongod.Domain\Mongod.Domain.csproj" />
+    <ProjectReference Include="..\Mongod.Infrastructure\Mongod.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
