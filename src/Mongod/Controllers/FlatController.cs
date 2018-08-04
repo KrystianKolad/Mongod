@@ -18,7 +18,11 @@ namespace Mongod.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var model = new FlatModel();
+            var model = new FlatModel()
+            {
+                Address = new AddressModel(),
+                Owner = new UserModel()
+            };
             return View(model);
         }
 

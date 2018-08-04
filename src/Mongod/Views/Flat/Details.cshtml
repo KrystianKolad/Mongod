@@ -2,3 +2,31 @@
 @{
     ViewData["Title"] = "Details page";
 }
+
+<fieldset></fieldset>
+    <legend>Flat</legend>
+    <div>
+        Imię właściciela: @Model.Owner.Name
+    </div>
+    <div>
+        Nazwisko właściciela: @Model.Owner.Surname
+    </div>
+    <div>
+        Ilość pokoi: @Model.RoomsCount
+    </div>
+    <div>
+        Ulica: @Model.Address.Street
+    </div>
+    <div>
+        Numer budynku: @Model.Address.BuildingNumber
+    </div>
+    <div>
+        Numer mieszkania: @Model.Address.FlatNumber
+    </div>
+    <div>
+        Miasto: @Model.Address.City
+    </div>
+    <div>
+        Kod pocztowy: @Model.Address.ZipCode
+    </div>
+</fieldset>

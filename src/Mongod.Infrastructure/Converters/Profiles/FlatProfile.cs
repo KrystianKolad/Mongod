@@ -9,8 +9,7 @@ namespace Mongod.Infrastructure.Converters.Profiles
         public FlatProfile()
         {
             CreateMap<Flat,FlatModel>();
-            CreateMap<FlatModel,Flat>()
-                .ForMember(x=>x.Id, y=>y.Ignore());
+            CreateMap<FlatModel,Flat>();
         }
     }
 }

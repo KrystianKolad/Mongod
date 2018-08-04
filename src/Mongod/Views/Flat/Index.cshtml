@@ -2,3 +2,34 @@
 @{
     ViewData["Title"] = "Add page";
 }
+
+<form method="POST">
+<fieldset>
+    <legend>Flat</legend>
+    <div class="editor-label">
+        Imię właściciela: <input asp-for="Owner.Name" />
+    </div>
+    <div class="editor-label">
+        Nazwisko właściciela: <input asp-for="Owner.Surname" />
+    </div>
+    <div class="editor-label">
+        Ilość pokoi: <input asp-for="RoomsCount" />
+    </div>
+    <div class="editor-label">
+        Ulica: <input asp-for="Address.Street" />
+    </div>
+    <div class="editor-label">
+        Numer budynku: <input asp-for="Address.BuildingNumber" />
+    </div>
+    <div class="editor-label">
+        Numer mieszkania: <input asp-for="Address.FlatNumber" />
+    </div>
+    <div class="editor-label">
+        Miasto: <input asp-for="Address.City" />
+    </div>
+    <div class="editor-label">
+        Kod pocztowy: <input asp-for="Address.ZipCode" />
+    </div>
+    <input type="submit" value="Submit" class="submit" />
+</fieldset>
+</form>
