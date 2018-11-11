@@ -20,7 +20,7 @@ namespace Mongod.Extensions
         {
             services.AddSingleton<IMongoClient>(new MongoClient(connectionString));
 
-            services.AddScoped<IBaseRepository<Flat>,BaseRepository<Flat>>();
+            services.AddScoped<IBaseRepository<Ad>,BaseRepository<Ad>>();
 
             return services;
         }
@@ -29,13 +29,13 @@ namespace Mongod.Extensions
         {
             services.AddAutoMapper();
 
-            services.AddScoped<IValidator<FlatModel>,FlatValidator>();
+            services.AddScoped<IValidator<AdModel>,AdValidator>();
             services.AddScoped<IValidator<UserModel>,UserValidator>();
             services.AddScoped<IValidator<AddressModel>,AddressValidator>();
 
-            services.AddScoped<IConverter<Flat,FlatModel>,FlatConverter>();
+            services.AddScoped<IConverter<Ad,AdModel>,AdConverter>();
             
-            services.AddScoped<IService<FlatModel, Flat>,Service<FlatModel, Flat>>();
+            services.AddScoped<IService<AdModel, Ad>,Service<AdModel, Ad>>();
             return services;
         }
     }

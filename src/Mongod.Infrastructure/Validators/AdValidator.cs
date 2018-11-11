@@ -3,12 +3,17 @@ using Mongod.Infrastructure.Models;
 
 namespace Mongod.Infrastructure.Validators
 {
-    public class FlatValidator : AbstractValidator<FlatModel>
+    public class AdValidator : AbstractValidator<AdModel>
     {
-        public FlatValidator()
+        public AdValidator()
         {
-            RuleFor(x=>x.RoomsCount)
-                .Must(x => x > 0);
+            RuleFor(x=>x.Title)
+                .NotNull()
+                .NotEmpty();
+
+            RuleFor(x=>x.Description)
+                .NotNull()
+                .NotEmpty();
 
             RuleFor(x=>x.Address)
                 .SetValidator(new AddressValidator());

@@ -14,7 +14,7 @@ namespace Mongod.Infrastructure.Tests.Converters
             Mapper.Initialize (cfg =>
             {
                 cfg.AddProfile (new UserProfile ());
-                cfg.AddProfile (new FlatProfile ());
+                cfg.AddProfile (new AdProfile ());
                 cfg.AddProfile (new AddressProfile ());
 
             });

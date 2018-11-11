@@ -7,10 +7,10 @@ using Mongod.Infrastructure.Services.Interfaces;
 
 namespace Mongod.Controllers
 {
-    public class FlatController : Controller
+    public class AdController : Controller
     {
-        private readonly IService<FlatModel, Flat> _service;
-        public FlatController(IService<FlatModel,Flat> service)
+        private readonly IService<AdModel, Ad> _service;
+        public AdController(IService<AdModel,Ad> service)
         {
             _service = service;
         }
@@ -24,7 +24,7 @@ namespace Mongod.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            var model = new FlatModel()
+            var model = new AdModel()
             {
                 Address = new AddressModel(),
                 Owner = new UserModel()
@@ -33,7 +33,7 @@ namespace Mongod.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(FlatModel model)
+        public async Task<IActionResult> Add(AdModel model)
         {
             if(!ModelState.IsValid)
             {

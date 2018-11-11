@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Mongod.Infrastructure.Models.AdModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Owner</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Owner.Name @item.Owner.Surname
+            </td>
+            <td>
+                @Html.ActionLink("Details","Details","Ad",new { id = @item.Id }, null)
+            </td>
+        </tr>
+    }
+</table>

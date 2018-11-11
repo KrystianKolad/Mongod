@@ -4,12 +4,12 @@ using Mongod.Infrastructure.Models;
 
 namespace Mongod.Infrastructure.Converters.Profiles
 {
-    public class FlatProfile : Profile
+    public class AdProfile : Profile
     {
-        public FlatProfile()
+        public AdProfile()
         {
-            CreateMap<Flat,FlatModel>();
-            CreateMap<FlatModel,Flat>();
+            CreateMap<Ad,AdModel>();
+            CreateMap<AdModel,Ad>();
         }
     }
 }

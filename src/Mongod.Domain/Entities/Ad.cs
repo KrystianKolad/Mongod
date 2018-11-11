@@ -3,8 +3,8 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Mongod.Domain.Entities
 {
-    [BsonCollection("Flats")]
-    public class Flat : BaseEntity
+    [BsonCollection("ads")]
+    public class Ad : BaseEntity
     {
         [BsonElement("owner")]
         public User Owner { get; set; }
@@ -12,7 +12,10 @@ namespace Mongod.Domain.Entities
         [BsonElement("address")]
         public Address Address { get; set; }
 
-        [BsonElement("roomscount")]
-        public int RoomsCount { get; set; }
+        [BsonElement("title")]
+        public string Title { get; set; }
+
+        [BsonElement("description")]
+        public string Description { get; set; }
     }
 }

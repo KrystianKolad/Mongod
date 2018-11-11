@@ -1,12 +1,20 @@
-@model Mongod.Infrastructure.Models.FlatModel
+@model Mongod.Infrastructure.Models.AdModel
 @{
     ViewData["Title"] = "Add page";
 }
 
-@using (Html.BeginForm("Add","Flat",FormMethod.Post))
+@using (Html.BeginForm("Add","Ad",FormMethod.Post))
 {
 <fieldset>
-    <legend>Flat</legend>
+    <legend>Advertisement</legend>
+        <div class="editor-label">
+        Tytuł: <input asp-for="Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+        <div class="editor-label">
+        Opis: <input asp-for="Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
     <div class="editor-label">
         Imię właściciela: <input asp-for="Owner.Name" />
         <span asp-validation-for="Owner.Name" class="text-danger"></span>
@@ -14,10 +22,6 @@
     <div class="editor-label">
         Nazwisko właściciela: <input asp-for="Owner.Surname" />
         <span asp-validation-for="Owner.Surname" class="text-danger"></span>
-    </div>
-    <div class="editor-label">
-        Ilość pokoi: <input asp-for="RoomsCount" />
-        <span asp-validation-for="RoomsCount" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Ulica: <input asp-for="Address.Street" />

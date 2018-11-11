@@ -7,14 +7,14 @@ using NUnit.Framework;
 namespace Mongod.Infrastructure.Tests.Converters
 {
     [TestFixture]
-    public class FlatConverterTests
+    public class AdConverterTests
     {
-        private IConverter<Flat,FlatModel> _sut;
+        private IConverter<Ad,AdModel> _sut;
         
         [SetUp]
         public void SetUp ()
         {
-            _sut = new FlatConverter(AutoMapperConfigurationTests._mapper);
+            _sut = new AdConverter(AutoMapperConfigurationTests._mapper);
         }   
     }
 }

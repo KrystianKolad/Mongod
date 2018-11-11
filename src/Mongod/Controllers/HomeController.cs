@@ -10,8 +10,8 @@ namespace Mongod.Controllers
         public IActionResult Index()
         {
             return RedirectToAction(
-                nameof(FlatController.Index),
-                nameof(FlatController).Replace("Controller",String.Empty));
+                nameof(AdController.Index),
+                nameof(AdController).Replace("Controller",String.Empty));
         }
 
         public IActionResult Error()
