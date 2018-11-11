@@ -9,27 +9,35 @@
     <legend>Flat</legend>
     <div class="editor-label">
         Imię właściciela: <input asp-for="Owner.Name" />
+        <span asp-validation-for="Owner.Name" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Nazwisko właściciela: <input asp-for="Owner.Surname" />
+        <span asp-validation-for="Owner.Surname" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Ilość pokoi: <input asp-for="RoomsCount" />
+        <span asp-validation-for="RoomsCount" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Ulica: <input asp-for="Address.Street" />
+        <span asp-validation-for="Address.Street" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Numer budynku: <input asp-for="Address.BuildingNumber" />
+        <span asp-validation-for="Address.BuildingNumber" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Numer mieszkania: <input asp-for="Address.FlatNumber" />
+        <span asp-validation-for="Address.FlatNumber" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Miasto: <input asp-for="Address.City" />
+        <span asp-validation-for="Address.City" class="text-danger"></span>
     </div>
     <div class="editor-label">
         Kod pocztowy: <input asp-for="Address.ZipCode" />
+        <span asp-validation-for="Address.ZipCode" class="text-danger"></span>
     </div>
     <input type="submit" value="Submit" class="submit" />
 </fieldset>

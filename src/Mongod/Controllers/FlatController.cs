@@ -35,6 +35,10 @@ namespace Mongod.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(FlatModel model)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
             await _service.AddAsync(model);
             return RedirectToAction("Index","Home");
         }

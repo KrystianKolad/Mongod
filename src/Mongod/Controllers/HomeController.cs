@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Mongod.Domain.Entities;
-using Mongod.Infrastructure.Models;
-using Mongod.Infrastructure.Services.Interfaces;
 using Mongod.Infrastructure.ViewModels;
 
 namespace Mongod.Controllers
