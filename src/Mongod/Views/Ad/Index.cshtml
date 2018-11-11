@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Mongod.Infrastructure.Models.AdModel>
+﻿@model Mongod.Infrastructure.ViewModels.PageViewModel<Mongod.Infrastructure.Models.AdModel>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -9,7 +9,7 @@
         <th>Title</th>
         <th>Owner</th>
     </tr>
-    @foreach(var item in Model)
+    @foreach(var item in Model.Items)
     {
         <tr>
             <td>
@@ -24,3 +24,16 @@
         </tr>
     }
 </table>
+
+@{
+    if(@Model.PageNumber>0)
+    {
+        @Html.ActionLink("Previous Page","Index","Ad", new { pageNumber = @Model.PageNumber - 1, maxPageItemsCount = @Model.MaxPageItemsCount},null)
+    }
+}
+@{
+    if(@Model.NexPageAvailable)
+    {
+        @Html.ActionLink("Next page","Index","Ad", new { pageNumber = @Model.PageNumber + 1, maxPageItemsCount = @Model.MaxPageItemsCount},null)
+    }
+}

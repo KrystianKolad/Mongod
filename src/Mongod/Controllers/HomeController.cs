@@ -11,7 +11,8 @@ namespace Mongod.Controllers
         {
             return RedirectToAction(
                 nameof(AdController.Index),
-                nameof(AdController).Replace("Controller",String.Empty));
+                nameof(AdController).Replace("Controller",String.Empty),
+                new { pageNumber = 0, maxPageItemsCount = 10});
         }
 
         public IActionResult Error()

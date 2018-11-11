@@ -15,9 +15,9 @@ namespace Mongod.Controllers
             _service = service;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index([FromQuery]int pageNumber, [FromQuery]int maxPageItemsCount)
         {
-            var model = await _service.GetAllAsync();
+            var model = await _service.GetPageAsync(pageNumber,maxPageItemsCount);
             return View(model);
         }
 

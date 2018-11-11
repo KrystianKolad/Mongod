@@ -9,6 +9,6 @@ namespace Mongod.Domain.Repositories.Interfaces
     {
         Task AddAsync(T entity);
         Task<T> FindAsync(Guid id);
-        Task<List<T>> GetAllAsync();
+        Task<List<T>> GetPage(int pageNumber, int maxPageItemsCount);
     }
 }

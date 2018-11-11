@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Mongod.Domain.Entities;
 using Mongod.Domain.Repositories.Interfaces;
 using Mongod.Infrastructure.Converters.Interfaces;
 using Mongod.Infrastructure.Models;
 using Mongod.Infrastructure.Services.Interfaces;
+using Mongod.Infrastructure.ViewModels;
 
 namespace Mongod.Infrastructure.Services
 {
@@ -31,9 +33,17 @@ namespace Mongod.Infrastructure.Services
             return _converter.Convert(await _repository.FindAsync(id));
         }
 
-        public async Task<IList<TModel>> GetAllAsync()
+        public async Task<PageViewModel<TModel>> GetPageAsync(int pageNumber, int maxPageItemsCount)
         {
-            return _converter.Convert(await _repository.GetAllAsync());
+            var items = _converter.Convert(await _repository.GetPage(pageNumber,maxPageItemsCount));
+
+            return new PageViewModel<TModel>()
+            {
+                Items = items.Take(maxPageItemsCount).ToList(),
+                PageNumber = pageNumber,
+                MaxPageItemsCount = maxPageItemsCount,
+                NexPageAvailable = items.Count() > maxPageItemsCount
+            };
         }
     }
 }

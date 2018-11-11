@@ -29,10 +29,14 @@ namespace Mongod.Domain.Repositories
             return await collection.Find(x=>x.Id.Equals(id)).SingleOrDefaultAsync();
         }
 
-        public async Task<List<T>> GetAllAsync()
+        public async Task<List<T>> GetPage(int pageNumber, int maxPageItemsCount)
         {
             var collection = _database.GetCollection<T>(GetCollectionName());
-            return await collection.AsQueryable().ToListAsync();
+            return await collection
+                .Find(FilterDefinition<T>.Empty)
+                .Skip(pageNumber*maxPageItemsCount)
+                .Limit(maxPageItemsCount+1)
+                .ToListAsync();
         }
 
         private string GetCollectionName()
