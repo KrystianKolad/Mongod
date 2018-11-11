@@ -28,12 +28,12 @@
 @{
     if(@Model.PageNumber>0)
     {
-        @Html.ActionLink("Previous Page","Index","Ad", new { pageNumber = @Model.PageNumber - 1, maxPageItemsCount = @Model.MaxPageItemsCount},null)
+        @Html.ActionLink("Previous Page","Index","Ad", new { pageNumber = @Model.PageNumber - 1, maxPageItemsCount = @Model.MaxPageItemsCount},new { @class="btn btn-info" })
     }
 }
 @{
     if(@Model.NexPageAvailable)
     {
-        @Html.ActionLink("Next page","Index","Ad", new { pageNumber = @Model.PageNumber + 1, maxPageItemsCount = @Model.MaxPageItemsCount},null)
+        @Html.ActionLink("Next page","Index","Ad", new { pageNumber = @Model.PageNumber + 1, maxPageItemsCount = @Model.MaxPageItemsCount},new { @class="btn btn-info" })
     }
 }
