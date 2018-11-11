@@ -7,21 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 using Mongod.Domain.Entities;
 using Mongod.Infrastructure.Models;
 using Mongod.Infrastructure.Services.Interfaces;
-using Mongod.Models;
+using Mongod.Infrastructure.ViewModels;
 
 namespace Mongod.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IService<FlatModel, Flat> _service;
-        public HomeController(IService<FlatModel,Flat> service)
+        public IActionResult Index()
         {
-            _service = service;
-        }
-        public async Task<IActionResult> Index()
-        {
-            var model = await _service.GetAllAsync();
-            return View(model);
+            return RedirectToAction(
+                nameof(FlatController.Index),
+                nameof(FlatController).Replace("Controller",String.Empty));
         }
 
         public IActionResult Error()

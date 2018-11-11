@@ -1,35 +1,30 @@
-@model Mongod.Infrastructure.Models.FlatModel
+﻿@model IEnumerable<Mongod.Infrastructure.Models.FlatModel>
+
 @{
-    ViewData["Title"] = "Add page";
+    ViewData["Title"] = "Home Page";
 }
 
-<form method="POST">
-<fieldset>
-    <legend>Flat</legend>
-    <div class="editor-label">
-        Imię właściciela: <input asp-for="Owner.Name" />
-    </div>
-    <div class="editor-label">
-        Nazwisko właściciela: <input asp-for="Owner.Surname" />
-    </div>
-    <div class="editor-label">
-        Ilość pokoi: <input asp-for="RoomsCount" />
-    </div>
-    <div class="editor-label">
-        Ulica: <input asp-for="Address.Street" />
-    </div>
-    <div class="editor-label">
-        Numer budynku: <input asp-for="Address.BuildingNumber" />
-    </div>
-    <div class="editor-label">
-        Numer mieszkania: <input asp-for="Address.FlatNumber" />
-    </div>
-    <div class="editor-label">
-        Miasto: <input asp-for="Address.City" />
-    </div>
-    <div class="editor-label">
-        Kod pocztowy: <input asp-for="Address.ZipCode" />
-    </div>
-    <input type="submit" value="Submit" class="submit" />
-</fieldset>
-</form>
+<table class="table">
+    <tr>
+        <th>Adres</th>
+        <th>Owner</th>
+        <th>Ilość pokoi</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Address.Street @item.Address.BuildingNumber / @item.Address.FlatNumber
+            </td>
+            <td>
+                @item.Owner.Name @item.Owner.Surname
+            </td>
+            <td>
+                @item.RoomsCount
+            </td>
+            <td>
+                @Html.ActionLink("Details","Details","Flat",new { id = @item.Id }, null)
+            </td>
+        </tr>
+    }
+</table>

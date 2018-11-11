@@ -15,8 +15,14 @@ namespace Mongod.Controllers
             _service = service;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            var model = await _service.GetAllAsync();
+            return View(model);
+        }
+
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Add()
         {
             var model = new FlatModel()
             {
@@ -27,7 +33,7 @@ namespace Mongod.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(FlatModel model)
+        public async Task<IActionResult> Add(FlatModel model)
         {
             await _service.AddAsync(model);
             return RedirectToAction("Index","Home");

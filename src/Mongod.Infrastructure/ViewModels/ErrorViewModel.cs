@@ -1,6 +1,6 @@
 using System;
 
-namespace Mongod.Models
+namespace Mongod.Infrastructure.ViewModels
 {
     public class ErrorViewModel
     {
