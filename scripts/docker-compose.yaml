@@ -9,7 +9,7 @@ services:
       - '5000:5000'
   
   mongodb:
-    image: mongo
+    image: mongo:3.2.20-jessie
     networks:
       - mongod-net
     ports:

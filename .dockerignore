@@ -1,2 +1,4 @@
 artifacts?
 packages?
+bin?
+obj?
